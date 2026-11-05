@@ -1,0 +1,213 @@
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.education-section {
+    padding-bottom: clamp(80px, 10vw, 140px);
+    border-top: 1px solid var(--border);
+}
+
+.education-list {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--border);
+    list-style: none;
+}
+
+.education-card {
+    display: grid;
+    grid-template-columns: minmax(130px, .7fr) minmax(0, 2fr) minmax(150px, .8fr);
+    align-items: center;
+    gap: 28px;
+    padding: 28px 4px;
+    border-bottom: 1px solid var(--border);
+}
+
+.education-level,
+.education-period {
+    color: var(--primary-text);
+    font: 10px var(--mono);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.education-details h3 {
+    margin: 0 0 4px;
+    font: clamp(22px, 3vw, 32px)/1.1 var(--display);
+    letter-spacing: .035em;
+}
+
+.education-details p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.education-period {
+    color: var(--text-muted);
+    text-align: right;
+    text-transform: none;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(280px, .85fr) minmax(0, 1.15fr);
+    column-gap: clamp(32px, 6vw, 88px);
+    align-items: center;
+}
+
+.hero-copy {
+    width: 100%;
+    padding: clamp(50px, 8vh, 95px) 0 110px;
+}
+
+.hero h1 {
+    font-size: clamp(3.7rem, 7.4vw, 7.25rem);
+    line-height: .84;
+}
+
+.hero-art {
+    position: relative;
+    inset: auto;
+    display: grid;
+    width: 100%;
+    height: min(64vh, 500px);
+    min-height: 350px;
+    place-items: center;
+    pointer-events: none;
+    isolation: isolate;
+}
+
+.hero-art .magic-circle {
+    z-index: 0;
+    width: min(30vw, 360px);
+}
+
+.hero-art .circle-two {
+    width: min(22vw, 270px);
+}
+
+.hero-clover-effect {
+    position: absolute;
+    z-index: 0;
+    right: 3%;
+    bottom: 12%;
+    color: var(--primary);
+    font-size: clamp(90px, 13vw, 180px);
+    line-height: 1;
+    opacity: .1;
+    filter: drop-shadow(0 0 24px var(--glow));
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero-portrait {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    width: min(100%, 350px);
+    aspect-ratio: 1;
+    margin: 0;
+    place-items: center;
+    overflow: hidden;
+    border: 2px solid color-mix(in srgb, var(--primary) 72%, var(--border));
+    border-radius: 50%;
+    background: var(--surface);
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--primary) 12%, transparent), 0 20px 55px #0003;
+    isolation: isolate;
+}
+
+.hero-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 18%;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: minmax(220px, .78fr) minmax(0, 1.22fr);
+        column-gap: 30px;
+    }
+
+    .hero-copy {
+        padding-block: 55px 100px;
+    }
+
+    .hero-art {
+        height: min(58vh, 430px);
+        min-height: 300px;
+    }
+
+    .hero-art .magic-circle {
+        width: min(38vw, 320px);
+    }
+
+    .hero-art .circle-two {
+        width: min(28vw, 240px);
+    }
+
+    .hero-portrait {
+        width: min(100%, 300px);
+    }
+}
+
+@media (max-width: 620px) {
+    .hero {
+        display: flex;
+        min-height: calc(100svh - 68px);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-art {
+        order: 0;
+        width: 100%;
+        height: min(34svh, 260px);
+        min-height: 240px;
+        margin-top: 12px;
+        opacity: 1;
+    }
+
+    .hero-portrait {
+        width: min(100%, 230px);
+    }
+
+    .hero-copy {
+        order: 1;
+        width: 100%;
+        padding: 12px 0 92px;
+    }
+
+    .hero h1 {
+        margin-top: 16px;
+        font-size: clamp(3.3rem, 12vw, 5rem);
+    }
+
+    .hero-role {
+        margin-top: 16px;
+    }
+
+    .hero-pitch {
+        max-width: 520px;
+    }
+
+    .hero-about {
+        max-width: 520px;
+        margin-top: 24px;
+    }
+
+    .hero-clover-effect {
+        right: 4%;
+        bottom: 6%;
+        font-size: 74px;
+        opacity: .08;
+    }
+}
+

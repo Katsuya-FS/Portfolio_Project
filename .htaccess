@@ -1,0 +1,7 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^public/ - [L]
+RewriteRule ^(src|templates)(/|$) - [F,L,NC]
+RewriteRule ^(assets|contact\.php)(/.*)?$ public/$1$2 [L]
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^(.+)$ public/$1 [L]

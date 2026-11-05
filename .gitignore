@@ -1,0 +1,43 @@
+# Secrets and machine-specific settings
+.env
+.env.*
+!.env.example
+/config.local.php
+/auth.json
+
+# Installed dependencies
+/vendor/
+/node_modules/
+
+# Vercel and generated output
+/.vercel/
+/.next/
+/dist/
+/build/
+
+# PHP tools and generated data
+.phpunit.cache/
+.php-cs-fixer.cache
+.phpstorm.meta.php
+/coverage/
+*.phar
+
+# Logs, caches, and temporary files
+*.log
+error_log
+/cache/
+/tmp/
+/temp/
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*~
+
+# Local editor and operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/

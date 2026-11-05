@@ -1,0 +1,333 @@
+.projects-section {
+    padding-bottom: clamp(80px, 10vw, 140px);
+    overflow: hidden;
+}
+
+.projects-section > .section-intro {
+    padding-bottom: 24px;
+}
+
+.project-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+}
+
+.carousel-hint {
+    margin: 0;
+    color: var(--text-muted);
+    font: 9px var(--mono);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.carousel-count {
+    margin: 0;
+    color: var(--text-muted);
+    font: 10px var(--mono);
+    letter-spacing: .12em;
+}
+
+.carousel-count [data-current-project] {
+    color: var(--primary-text);
+}
+
+.dialog-close {
+    display: grid;
+    width: 42px;
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color .2s, background-color .2s, transform .2s;
+}
+
+.dialog-close:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.project-track {
+    --card-width: min(68vw, 580px);
+    display: flex;
+    width: 100vw;
+    gap: clamp(16px, 3vw, 36px);
+    margin-left: calc((100% - 100vw) / 2);
+    padding: 18px calc((100vw - var(--card-width)) / 2) 44px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: calc((100vw - var(--card-width)) / 2);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--surface-2);
+}
+
+.project-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.project-track::-webkit-scrollbar-track {
+    border-radius: 99px;
+    background: var(--surface-2);
+}
+
+.project-track::-webkit-scrollbar-thumb {
+    border: 2px solid var(--surface-2);
+    border-radius: 99px;
+    background: var(--primary);
+}
+
+.project-slide {
+    flex: 0 0 var(--card-width);
+    scroll-snap-align: center;
+}
+
+.project-card {
+    display: grid;
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+    transition: filter .4s ease, opacity .4s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.project-card:not(.is-active) {
+    filter: blur(3px);
+    opacity: .52;
+    transform: scale(.96);
+}
+
+.project-card.is-active,
+.project-card:focus-visible {
+    border-color: color-mix(in srgb, var(--primary) 65%, var(--border));
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: var(--shadow);
+}
+
+.project-card-image {
+    position: relative;
+    display: block;
+    aspect-ratio: 1.9;
+    overflow: hidden;
+    background: var(--surface-2);
+}
+
+.project-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+    transition: transform .7s var(--ease-soft);
+}
+
+.project-card.is-active .project-card-image img,
+.project-card:hover .project-card-image img {
+    transform: scale(1);
+}
+
+.project-card-image .visual-index {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    padding: 7px 10px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+}
+
+.project-card-copy {
+    display: grid;
+    gap: 9px;
+    padding: clamp(16px, 2.4vw, 24px);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .45s ease, transform .55s var(--ease-soft);
+}
+
+.js-ready .project-card:not(.is-active) .project-card-copy {
+    opacity: .75;
+    transform: translateY(12px);
+}
+
+.project-eyebrow,
+.project-card-action {
+    color: var(--primary-text);
+    font: 10px var(--mono);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.project-card-title {
+    font: clamp(27px, 4vw, 42px)/.95 var(--display);
+    letter-spacing: .025em;
+    text-transform: uppercase;
+}
+
+.project-summary {
+    max-width: 500px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.project-card-copy .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.project-card-copy .tag-list > span {
+    padding: 5px 8px;
+    border: 1px solid var(--border);
+    color: var(--primary-text);
+    font: 9px var(--mono);
+}
+
+.project-card-action {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.project-dialog {
+    width: min(900px, calc(100% - 32px));
+    height: min(820px, 88vh);
+    max-height: 88vh;
+    padding: 0;
+    overflow: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 24px 90px #0008;
+}
+
+.project-dialog::backdrop {
+    background: #05050bc9;
+    backdrop-filter: blur(8px);
+}
+
+.project-dialog-content {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 0;
+}
+
+.project-dialog-cover {
+    position: relative;
+    flex: 0 0 50%;
+    min-height: 230px;
+    overflow: hidden;
+    background: var(--surface-2);
+}
+
+.project-dialog-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-dialog-cover .visual-index {
+    position: absolute;
+    bottom: 18px;
+    left: 22px;
+    padding: 7px 10px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+}
+
+.project-dialog-details {
+    position: relative;
+    flex: 1 0 50%;
+    padding: clamp(24px, 4vw, 42px);
+}
+
+.dialog-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 24px;
+}
+
+.project-dialog h3 {
+    margin: 14px 0 28px;
+    font: clamp(42px, 8vw, 70px)/.9 var(--display);
+    text-transform: uppercase;
+}
+
+.project-dialog .project-story {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 26px;
+}
+
+.project-dialog .project-story h4 {
+    margin: 0 0 8px;
+    color: var(--primary-text);
+    font: 10px var(--mono);
+    text-transform: uppercase;
+}
+
+.project-dialog .project-story p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.project-dialog .project-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 28px;
+    font: 11px var(--mono);
+}
+
+.project-dialog .project-links:empty {
+    display: none;
+}
+
+.project-dialog .project-repository-button,
+.project-dialog .project-live-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 13px 17px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    background: var(--primary);
+    color: #fff;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.project-dialog .project-repository-button:hover,
+.project-dialog .project-live-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.project-dialog .project-repository-button.is-placeholder {
+    opacity: .65;
+    cursor: default;
+}
+
+.project-dialog .project-repository-button:disabled {
+    color: #fff;
+}
+
