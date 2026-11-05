@@ -4,7 +4,7 @@
         <div class="magic-circle circle-one" aria-hidden="true"></div>
         <div class="magic-circle circle-two" aria-hidden="true"></div>
         <figure class="hero-portrait">
-            <img src="<?= EscapeHtml(BuildAssetUrl('img/finalIMG.jpg')) ?>" alt="Portrait of <?= EscapeHtml($Profile['name']) ?>" width="530" height="768" fetchpriority="high">
+            <img src="<?= EscapeHtml(BuildAssetUrl('img/ProfilePicture.jpg')) ?>" alt="Portrait of <?= EscapeHtml($Profile['name']) ?>" width="530" height="768" fetchpriority="high">
         </figure>
     </div>
     <div class="hero-clover-effect" aria-hidden="true">✿</div>
