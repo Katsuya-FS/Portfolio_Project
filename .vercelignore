@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+config.local.php
+node_modules/
+.git/
+.agents/
+.codex/
+/assets/
+includes/

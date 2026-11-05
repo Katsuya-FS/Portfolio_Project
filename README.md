@@ -70,6 +70,14 @@ The Projects section is a keyboard accessible carousel with five sample projects
 
 ## Deployment
 
+### Vercel
+
+The project includes a Vercel configuration for this PHP site. It uses the community-maintained `vercel-php` runtime, sends page requests to `api/index.php`, and publishes only the contents of `public/assets/` as static files. The PHP source is handled by the runtime instead of being offered as a download.
+
+Import the repository into Vercel with the project root as the Root Directory. Keep the Build Command and Output Directory settings on their defaults from `vercel.json`, then deploy. If you use the optional email and social configuration, add `PORTFOLIO_EMAIL`, `PORTFOLIO_GITHUB`, and `PORTFOLIO_LINKEDIN` in Vercel's Environment Variables; do not upload `.env` or `config.local.php`.
+
+The PHP runtime is community-maintained rather than an officially supported Vercel runtime. See the [Vercel PHP runtime setup](https://github.com/vercel-community/php#usage) and [Vercel runtime documentation](https://vercel.com/docs/functions/runtimes).
+
 ### Apache shared hosting
 
 Upload the project and point the domain's document root to `public/` if your host allows it. If the domain must serve the project root, keep the root `.htaccess` and root `index.php`; enable `mod_rewrite` and `AllowOverride All`. Confirm PHP 8.2+, HTTPS, and a configured mail transport. Set the mail and social environment variables or upload an untracked `config.local.php`.
