@@ -10,7 +10,7 @@ return [
         'stack' => ['React + Vite', 'Node.Js', 'JavaScript', 'CSS'],
         'image' => 'img/Project1.png',
         'alt' => 'Abstract project preview placeholder',
-        'live' => '#',
+        'live' => 'https://azureplayecommerce.vercel.app/',
         'repo' => 'https://github.com/Katsuya-FS/AzurePlay_Ecommerce',
     ],
     [
