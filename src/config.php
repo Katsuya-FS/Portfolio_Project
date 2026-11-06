@@ -14,6 +14,7 @@ return [
     'socials' => [
         'github' => getenv('PORTFOLIO_GITHUB') ?: ($SocialLinks['github'] ?? 'https://github.com/Katsuya-FS'),
         'linkedin' => getenv('PORTFOLIO_LINKEDIN') ?: ($SocialLinks['linkedin'] ?? ''),
+        'facebook' => getenv('PORTFOLIO_FACEBOOK') ?: ($SocialLinks['facebook'] ?? 'https://web.facebook.com/alcordo.cyronejames'),
     ],
     'mail_to' => getenv('PORTFOLIO_EMAIL') ?: ($LocalSettings['mail_to'] ?? ''),
 ];

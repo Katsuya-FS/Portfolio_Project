@@ -27,7 +27,7 @@ declare(strict_types=1);
     <link rel="stylesheet" href="<?= EscapeHtml(BuildAssetUrl('css/responsive.css')) ?>?v=2">
     <link rel="stylesheet" href="<?= EscapeHtml(BuildAssetUrl('css/education-hero.css')) ?>?v=2">
     <link rel="stylesheet" href="<?= EscapeHtml(BuildAssetUrl('css/projects.css')) ?>?v=3">
-    <link rel="stylesheet" href="<?= EscapeHtml(BuildAssetUrl('css/contact.css')) ?>?v=2">
+    <link rel="stylesheet" href="<?= EscapeHtml(BuildAssetUrl('css/contact.css')) ?>?v=3">
     <link rel="stylesheet" href="<?= EscapeHtml(BuildAssetUrl('css/sections.css')) ?>?v=16">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

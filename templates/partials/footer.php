@@ -28,6 +28,13 @@ declare(strict_types=1);
                 <span class="social-arrow" aria-hidden="true">↗</span>
             </a>
         <?php endif; ?>
+        <?php if ($SiteConfig['socials']['facebook'] !== ''): ?>
+            <a class="social-card" href="<?= EscapeHtml($SiteConfig['socials']['facebook']) ?>" target="_blank" rel="noopener noreferrer">
+                <span class="social-type">Facebook</span>
+                <span class="social-value">View my profile</span>
+                <span class="social-arrow" aria-hidden="true">↗</span>
+            </a>
+        <?php endif; ?>
     </div>
 </section>
 
